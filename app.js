@@ -1,19 +1,19 @@
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
-require("dotenv").config()
-
+require("dotenv").config();
 
 const mongoose = require("mongoose");
 
-
-
 const app = express();
 
+let registerRoute = require("./routes/register");
+
 mongoose
-  .connect(DB_URI, {
+  .connect(process.env.DB_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true
   })
   .then(() => {
     console.log("Database connected");
@@ -24,15 +24,13 @@ mongoose
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, "assets")));
 
-
-app.use(indexRouter);
-app.use("/users", usersRouter);
+app.use(registerRoute);
+// app.use("/users", usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
