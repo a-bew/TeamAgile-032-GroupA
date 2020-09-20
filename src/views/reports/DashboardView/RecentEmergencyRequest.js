@@ -19,39 +19,6 @@ import {
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 
-const data = [
-  {
-    id: uuid(),
-    name: "Port-Harcourt, Nigeria",
-    imageUrl: "/static/images/products/product_1.png",
-    updatedAt: moment().subtract(2, "hours"),
-  },
-  {
-    id: uuid(),
-    name: "Algeria",
-    imageUrl: "/static/images/products/product_2.png",
-    updatedAt: moment().subtract(2, "hours"),
-  },
-  {
-    id: uuid(),
-    name: "South-Africa",
-    imageUrl: "/static/images/products/product_3.png",
-    updatedAt: moment().subtract(3, "hours"),
-  },
-  {
-    id: uuid(),
-    name: "Ghana",
-    imageUrl: "/static/images/products/product_4.png",
-    updatedAt: moment().subtract(5, "hours"),
-  },
-  {
-    id: uuid(),
-    name: "Cairo, Egypt",
-    imageUrl: "/static/images/products/product_5.png",
-    updatedAt: moment().subtract(9, "hours"),
-  },
-];
-
 const useStyles = makeStyles({
   root: {
     height: "100%",
@@ -62,9 +29,9 @@ const useStyles = makeStyles({
   },
 });
 
-const LatestProducts = ({ className, ...rest }) => {
+const LatestProducts = ({ className, stat, ...rest }) => {
   const classes = useStyles();
-  const [products] = useState(data);
+  const [products] = useState(stat);
 
   return (
     <Card className={clsx(classes.root, className)} {...rest}>

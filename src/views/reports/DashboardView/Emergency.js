@@ -25,7 +25,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const TasksProgress = ({ className, ...rest }) => {
+const TasksProgress = ({ className, stat, ...rest }) => {
   const classes = useStyles();
 
   return (
@@ -37,7 +37,7 @@ const TasksProgress = ({ className, ...rest }) => {
               Emergency
             </Typography>
             <Typography color="textPrimary" variant="h3">
-              75.5%
+              {stat}
             </Typography>
           </Grid>
           <Grid item>

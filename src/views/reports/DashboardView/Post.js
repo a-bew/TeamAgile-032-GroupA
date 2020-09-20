@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Budget = ({ className, ...rest }) => {
+const Budget = ({ className, stat, ...rest }) => {
   const classes = useStyles();
 
   return (
@@ -44,7 +44,7 @@ const Budget = ({ className, ...rest }) => {
               POST
             </Typography>
             <Typography color="textPrimary" variant="h3">
-              24,000
+              {stat}
             </Typography>
           </Grid>
           <Grid item>

@@ -20,7 +20,7 @@ const useStyles = makeStyles(() => ({
   root: {},
 }));
 
-const Sales = ({ className, ...rest }) => {
+const Sales = ({ className, stat, ...rest }) => {
   const classes = useStyles();
   const theme = useTheme();
 

@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const TotalCustomers = ({ className, ...rest }) => {
+const TotalCustomers = ({ className, stat, ...rest }) => {
   const classes = useStyles();
 
   return (
@@ -44,7 +44,7 @@ const TotalCustomers = ({ className, ...rest }) => {
               TOTAL Users
             </Typography>
             <Typography color="textPrimary" variant="h3">
-              1,600
+              {stat.count}
             </Typography>
           </Grid>
           <Grid item>
@@ -56,7 +56,7 @@ const TotalCustomers = ({ className, ...rest }) => {
         <Box mt={2} display="flex" alignItems="center">
           <ArrowUpwardIcon className={classes.differenceIcon} />
           <Typography className={classes.differenceValue} variant="body2">
-            16%
+            {stat.percent}
           </Typography>
           <Typography color="textSecondary" variant="caption">
             Since last month

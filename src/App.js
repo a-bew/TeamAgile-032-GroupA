@@ -47,6 +47,7 @@ const dataProvider = jsonServerProvider("https://jsonplaceholder.typicode.com");
 
 const App = () => (
   <Admin
+    name="dashboard"
     // dashboard={Dashboard}
     // customRoutes={Routes}
     layout={(props) => <Layout {...props} menu={TreeMenu} />}
